@@ -17,7 +17,7 @@
         <!-- Propiedades para MySQL (remoto)  -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/bdscec?autoReconnect=true</property>
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/mydb?autoReconnect=true</property>
         <property name="hibernate.connection.username">michel</property>
         <property name="hibernate.connection.password">1234</property>
 		<!-- JDBC connection pool (use the built-in) -->
@@ -47,7 +47,7 @@
         <!-- Archivos ORM -->
         <mapping resource="edu/uag/iidis/scec/modelo/Usuario.hbm.xml"/>
         <mapping resource="edu/uag/iidis/scec/modelo/Rol.hbm.xml"/>
-        <mapping resource="edu/uag/iidis/scec/modelo/Ciudad.hbm.xml"/>
+        <!--mapping resource="edu/uag/iidis/scec/modelo/Ciudad.hbm.xml"/-->
         <mapping resource="edu/uag/iidis/scec/modelo/Estado.hbm.xml"/>
 
     </session-factory>
