@@ -7,6 +7,9 @@
             <td class="clsMenuBarItem"><a href="irAyuda.do">Help</td>
             <td>|</td>
             <td class="clsMenuBarItem"><a href="solicitarListarRoles.do">Rolesss</a></td>
+            <td>|</td>
+            <td class="clsMenuBarItem"><a href="solicitarReporteLugares.do">Reporte Lugares</td>
+            <td>|</td>
             <td width="100%"></td>
         </tr>
     </table>
