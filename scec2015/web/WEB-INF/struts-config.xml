@@ -57,6 +57,17 @@
                    type="edu.uag.iidis.scec.vista.FormaEliminarEstado">
         </form-bean>
     </form-beans>
+    <form-beans>
+	<form-bean name="formaListadoLugares"
+                   type="edu.uag.iidis.scec.vista.FormaListadoLugares">
+        </form-bean>
+        <form-bean name="formaNuevoLugar"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoLugar">
+     	</form-bean>
+        <form-bean name="formaEliminarLugar"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarLugar">
+        </form-bean>
+     </form-beans>
 
 
     <!-- Definición de Global Forward -->
@@ -163,6 +174,43 @@
             <forward name="cancelar" path="/solicitarListarRoles.do" redirect="true"/>
             <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
             <forward name="volver" path="solicitarRegistroEstado.do" redirect="true"/>
+       </action>
+
+        <action path="/solicitarListarLugares"
+                type="edu.uag.iidis.scec.control.MCUListarLugares"
+                parameter="solicitarListarLugares"
+                name="formaListadoLugares"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoLugares.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+        </action>
+        <action path="/solicitarRegistroLugar"
+                type="edu.uag.iidis.scec.control.MCURegistrarLugar"
+                parameter="solicitarRegistroLugar"
+                name="formaNuevoLugar"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoLugar.jsp"/>
+        </action>
+        <action path="/procesarRegistroLugar"
+                type="edu.uag.iidis.scec.control.MCURegistrarLugar"
+                parameter="procesarRegistroLugar"
+                name="formaNuevoLugar"
+                scope="request"
+                validate="true"
+                input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoLugar.jsp" >
+            <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+            <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+            <forward name="volver" path="solicitarRegistroLugar.do" redirect="true"/>
+       </action>
+       <action path="/procesarEliminarLugar"
+               type="edu.uag.iidis.scec.control.MCUEliminarLugar"
+               parameter="procesarEliminarLugar"
+               name="formaEliminarLugar"
+               scope="request"
+               validate="false">
+           <forward name="exito" path="/solicitarListarLugares.do" redirect="true"/>
        </action>
     </action-mappings>
 
