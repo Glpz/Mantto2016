@@ -1,9 +1,9 @@
-﻿<!--    
+﻿<!--
 
 
 
     build.xml
-    Autor: 
+    Autor:
 
     Script para la construcción de aplicaciones web
     basadas en el servidor Tomcat e Hibernate.
@@ -113,8 +113,8 @@
     <property name="web.home"        value="${basedir}/web"/>
     <property name="docs.home"       value="${basedir}/docs"/>
     <property name="build.home"      value="${basedir}/build"/>
-    <property name="classes.home"    value="${basedir}/build/WEB-INF/classes"/>    
-    <property name="lib.home"        value="${basedir}/build/WEB-INF/lib"/>    
+    <property name="classes.home"    value="${basedir}/build/WEB-INF/classes"/>
+    <property name="lib.home"        value="${basedir}/build/WEB-INF/lib"/>
     <property name="dist.home"       value="${basedir}/dist"/>
     <property name="test.out.dir"    value="${basedir}/testout"/>
 
@@ -145,7 +145,7 @@
     <http://localhost:8080/tomcat-docs/manager-howto.html>.
 -->
 <path id="tomcat.ant.classpath">
-             <pathelement 
+             <pathelement
 location="${catalina.home}/lib/catalina-ant.jar" />
          </path>
 
@@ -212,27 +212,27 @@ location="${catalina.home}/lib/catalina-ant.jar" />
 -->
 
     <path id="compile.classpath">
-        <!-- 
-            Incluye todos los archivos JAR que estan incluidos 
-            en /WEB-INF/lib 
+        <!--
+            Incluye todos los archivos JAR que estan incluidos
+            en /WEB-INF/lib
         -->
         <fileset dir="${web.home}/WEB-INF/lib">
             <include name="*.jar"/>
         </fileset>
 
 
-        <!-- 
-            Incluye todos los elementos que Tomcat expone a 
-            sus aplicaciones 
+        <!--
+            Incluye todos los elementos que Tomcat expone a
+            sus aplicaciones
         -->
 
         <fileset dir="${catalina.home}/lib">
             <include name="*.jar"/>
         </fileset>
 
-        <!-- 
+        <!--
             Tomcat bilbitecas dependiendo de la version, los directorios
-        
+
         <pathelement location="${catalina.home}/common/classes"/>
 
         <fileset dir="${catalina.home}/common/endorsed">
@@ -246,9 +246,9 @@ location="${catalina.home}/lib/catalina-ant.jar" />
             <include name="*.jar"/>
         </fileset>
 		-->
-		
-        <!-- 
-            Incluye todas las clases generadas del aplicación 
+
+        <!--
+            Incluye todas las clases generadas del aplicación
         -->
         <pathelement location="${classes.home}"/>
 
@@ -470,8 +470,8 @@ location="${catalina.home}/lib/catalina-ant.jar" />
     that Tomcat is running on.
 
     NOTE:  This is the logical opposite of the "remove" target.
-	
-	
+
+
 	war="file:${build.home}"/>
 -->
 
@@ -525,7 +525,7 @@ location="${catalina.home}/lib/catalina-ant.jar" />
 
 
 <!-- ==================== Esquema Target ============================== -->
-  <target name="db" 
+  <target name="db"
           description="Ejecuta el administrador gráfico de HSQLDB" >
 
       <java classname="org.hsqldb.util.DatabaseManager"
@@ -557,7 +557,7 @@ location="${catalina.home}/lib/catalina-ant.jar" />
 
   </target>
 
-  <target name="esquema" 
+  <target name="esquema"
           depends="build"
           description="Genera el esquema de la base de datos desde los archivos de mapeo">
 
@@ -569,18 +569,18 @@ location="${catalina.home}/lib/catalina-ant.jar" />
                   drop="no"
                   delimiter=";"
                   output="esquema.sql"
-                  quiet="no" 
+                  quiet="no"
                   text="no" >
     </schemaexport>
 
   </target>
 
 
-    <target name="junit" 
+    <target name="junit"
            description="Ejecuta la suite de pruebas">
 
         <mkdir dir="${test.out.dir}"/>
- 
+
        <junit printsummary="yes" fork="no" haltonfailure="yes">
             <classpath>
                 <fileset dir="${lib.home}">
@@ -590,29 +590,29 @@ location="${catalina.home}/lib/catalina-ant.jar" />
             </classpath>
             <formatter type="plain"/>
             <formatter type="xml"/>
-            <test name="edu.uag.iidis.scec.pruebas.AllTests" 
-                  todir="${test.out.dir}" 
+            <test name="edu.uag.iidis.scec.pruebas.AllTests"
+                  todir="${test.out.dir}"
                   haltonfailure="no"/>
         </junit>
 
     </target>
 
 
-    <target name="junitreport" 
-           depends="junit" 
+    <target name="junitreport"
+           depends="junit"
            description="Ejecuta pruebas y crea reporte">
 
         <junitreport todir="${test.out.dir}">
             <fileset dir="${test.out.dir}">
                 <include name="TEST-*.xml"/>
             </fileset>
-            <report format="frames" 
+            <report format="frames"
                     todir="${test.out.dir}"/>
         </junitreport>
 
     </target>
 
-    <target name="alltests" 
+    <target name="alltests"
           description="Crea y persiste algunos datos">
 
         <java classname="edu.uag.iidis.scec.pruebas.AllTests" fork="true">
