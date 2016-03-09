@@ -147,17 +147,7 @@ public class RecomendacionDAO {
         try {
 
 
-//            String consultaCuentaRoles =
-//            "select count(*) from Rol r where r.nombre=?";
-//
- //           int resultado =
- //           ((Integer) HibernateUtil.getSession()
- //                          .find(consultaCuentaRoles,
- //                                nombreRol,
- //                                StringType.INSTANCE)
- //                          .iterator()
- //                          .next()).intValue();
-// de acuerdo al nuevo formato
+
 
 			String hql = "select nombre from Recomendacion where nombre = :nombre";
 
