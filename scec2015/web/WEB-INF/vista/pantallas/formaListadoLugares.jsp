@@ -13,12 +13,9 @@
   }
 </style>
 <script language="javascript" type="text/javascript">
-<!--
   function EliminarLugar(strLugarName){
-    alert("eliminando");
-    return confirm("Desea eliminar el rol '" + strLugarName + "'?")
+    return confirm("¿Desea eliminar el rol '" + strLugarName + "'?")
   }
--->
 </script>
     <br>
     <font size='5'><fmt:message key="formaListadoLugares.titulo" /></font>
