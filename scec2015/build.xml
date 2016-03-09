@@ -34,7 +34,7 @@
     set to the current working directory.
 -->
 
-<project name="USJ" default="build" basedir=".">
+<project name="Mantenimiento" default="build" basedir=".">
 
 
 <!-- ===================== Property Definitions ====================== -->
