@@ -182,6 +182,26 @@
             <forward name="volver" path="solicitarRegistroEstado.do" redirect="true"/>
        </action>
 
+       <action path="/procesarRegistroRecomendacion"
+               type="edu.uag.iidis.scec.control.MCURegistrarRecomendacion"
+               parameter="procesarRegistroRecomendacion"
+               name="formaNuevaRecomendacion"
+               scope="request"
+               validate="true"
+               input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRecomendacion.jsp" >
+           <forward name="cancelar" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp"/>
+           <forward name="exito" path="/WEB-INF/vista/pantallas/pantallaBienvenida.jsp"/>
+           <forward name="volver" path="solicitarRegistroRecomendacion.do" redirect="true"/>
+      </action>
+        <action path="/procesarEliminarRol"
+                type="edu.uag.iidis.scec.control.MCUEliminarRol"
+                parameter="procesarEliminarRol"
+                name="formaEliminarRol"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/solicitarListarRoles.do" redirect="true"/>
+        </action>
+
         <action path="/solicitarListarLugares"
                 type="edu.uag.iidis.scec.control.MCUListarLugares"
                 parameter="solicitarListarLugares"
