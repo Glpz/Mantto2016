@@ -67,6 +67,12 @@
         <form-bean name="formaEliminarLugar"
                    type="edu.uag.iidis.scec.vista.FormaEliminarLugar">
         </form-bean>
+        <form-bean name="formaListadoRecomendaciones"
+                   type="edu.uag.iidis.scec.vista.FormaListadoRecomendaciones">
+        </form-bean>
+        <form-bean name="formaNuevaRecomendacion"
+                   type="edu.uag.iidis.scec.vista.FormaNuevaRecomendacion">
+        </form-bean>
      </form-beans>
 
 

@@ -6,8 +6,12 @@
             <td>|</td>
             <td class="clsMenuBarItem"><a href="irAyuda.do">Help</td>
             <td>|</td>
-            <td class="clsMenuBarItem"><a href="solicitarListarRoles.do">Rolesss</a></td>
+            <td class="clsMenuBarItem"><a href="solicitarListarRoles.do">Roles</a></td>
+            <td>|</td>
+            <td class="clsMenuBarItem"><a href="solicitarListarLugares.do">Lugares</td>
+            <td>|</td>
+            <td class="clsMenuBarItem"><a href="solicitarListarRecomendaciones.do">Recomendaciones</td>s
             <td width="100%"></td>
         </tr>
     </table>
-    <!-- FS: Barra Menu Principal -->	
+    <!-- FS: Barra Menu Principal -->
