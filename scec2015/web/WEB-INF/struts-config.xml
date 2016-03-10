@@ -13,12 +13,12 @@
     </display-name>
     <description>
         <![CDATA[
-            Prototipo Sistema de Correo Electr髇ico Centralizado.
+            Prototipo Sistema de Correo Electr贸nico Centralizado.
         ]]>
     </description>
 
 
-    <!-- Definici髇 de Formas -->
+    <!-- Definici贸n de Formas -->
     <form-beans>
         <form-bean name="formaNuevaPersona"
                    type="edu.uag.iidis.scec.vista.FormaNuevaPersona">
@@ -76,13 +76,13 @@
      </form-beans>
 
 
-    <!-- Definici髇 de Global Forward -->
+    <!-- Definici贸n de Global Forward -->
     <global-forwards>
         <forward name="irInicio" path="/irInicio.do"/>
     </global-forwards>
 
 
-    <!-- Definici髇 de acciones -->
+    <!-- Definici贸n de acciones -->
     <action-mappings>
         <action path="/irInicio"
                 forward="/WEB-INF/vista/pantallas/pantallaInicio.jsp" />
@@ -218,15 +218,25 @@
                validate="false">
            <forward name="exito" path="/solicitarListarLugares.do" redirect="true"/>
        </action>
+       <!--    Recomendaciones -Guie'Dani -->
+       <action path="/solicitarListarRecomendaciones"
+                type="edu.uag.iidis.scec.control.MCUListarRecomendaciones"
+                parameter="solicitarListarRecomendaciones"
+                name="formaListadoRecomendaciones"
+                scope="request"
+                validate="true" >
+            <forward name="exito" path="/WEB-INF/vista/pantallas/formaListadoRecomendaciones.jsp"/>
+            <forward name="volver" path="/WEB-INF/vista/pantallas/pantallaInicio.jsp" redirect="true"/>
+       </action>
     </action-mappings>
 
 
-    <!-- Definici髇 de archivos de recursos -->
+    <!-- Definici贸n de archivos de recursos -->
     <message-resources
             parameter="edu.uag.iidis.scec.vista.scecRB"/>
 
 
-    <!-- Configuraci髇 de Plug Ins -->
+    <!-- Configuraci贸n de Plug Ins -->
     <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
         <set-property property="pathnames"
                       value="/WEB-INF/validator-rules.xml,
