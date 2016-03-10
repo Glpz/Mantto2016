@@ -37,6 +37,26 @@ th {
     alert("eliminando");
     return confirm("Desea eliminar la recomendación '" + strRecomendacionName + "'?")
   }
+  
+  function elegirLugar () {
+   var choose = document.getElementById('choose').value;
+   alert(choose);
+   if(choose.selectedIndex<0)
+   alert('No hay opción seleccionada');
+   else
+   alert('La opción seleccionada es: '+choose.options[choose.selectedIndex].value);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 -->
 </script>
     <br>
