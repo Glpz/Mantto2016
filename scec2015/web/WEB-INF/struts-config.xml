@@ -190,6 +190,14 @@
                validate="false">
            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaReporteRecomendacion.jsp"/>
        </action>
+       <action path="/solicitarRegistroRecomendacion"
+               type="edu.uag.iidis.scec.control.MCURegistrarRecomendacion"
+               parameter="solicitarRegistroRecomendacion"
+               name="formaNuevaRecomendacion"
+               scope="request"
+               validate="false">
+           <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevaRecomendacion.jsp"/>
+       </action>
        <action path="/procesarRegistroRecomendacion"
                type="edu.uag.iidis.scec.control.MCURegistrarRecomendacion"
                parameter="procesarRegistroRecomendacion"
