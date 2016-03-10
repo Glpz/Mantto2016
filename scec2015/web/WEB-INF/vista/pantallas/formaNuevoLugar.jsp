@@ -64,14 +64,27 @@
         <tr>
             <td align="right">
                 <fmt:message key="formaNuevoLugar.etiqueta.estado" />
+                <select>
+                  <c:forEach var="lugares" items="${formaNuevaRecomendacion.lugares}">
+                  <option value="${lugares.nombre}">${lugares.nombre}</option>
+                  </c:forEach>
+                </select>
             </td>
+
+                <!--input type="text"
+                       name="lugar"
+                       size="50"
+                       maxlength="100"
+                       value="${formaNuevaRecomendacion.lugar}" /-->
+
+            <!--
             <td align="left">
                 <input type="text"
                        name="estado"
                        size="50"
                        maxlength="100"
                        value="${formaNuevoLugar.coordenadas}" />
-            </td>
+            </td>-->
         </tr>
         <tr>
             <td colspan="2" align="center">
