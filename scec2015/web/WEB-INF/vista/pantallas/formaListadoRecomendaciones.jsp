@@ -47,16 +47,6 @@ th {
    alert('La opción seleccionada es: '+choose.options[choose.selectedIndex].value);
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 -->
 </script>
     <br>
@@ -66,6 +56,13 @@ th {
             <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
                 <a href="solicitarRegistroRecomendacion.do" class="HipervinculoAdmon">Agregar nueva Recomen...</a>
             </td>
+        <br>
+        <label> Filtrar por lugar </label> 
+        <SELECT id="choose" NAME="selCombo" SIZE=1 onChange="elegirLugar()" > 
+        	<c:forEach var="recomendaciones" items="${formaListadoRecomendaciones.recomendaciones}"> 
+        	<OPTION   VALUE="${recomendaciones.lugar}">${recomendaciones.lugar}</OPTION> 
+        	</c:forEach>
+        </SELECT> 
 
          <tr cellpadding="0" cellspacing="0" width="60%" border="3" bgcolor="#CCCCCC" style=" background-color:#4CAF50; color:#fff;">
          <td><b><fmt:message key="formaListadoRecomendaciones.etiqueta.usuario" /></b></td>
